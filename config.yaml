@@ -3,51 +3,8 @@ name: chainlinkFeeds
 description: Chainlink feeds
 repository: https://github.com/Float-Capital/chainlink-feeds
 networks:
-  - id: 42161
-    start_block: 121690634
-    contracts:
-      - name: ArbFeeds
-        address:
-          - "0x7AAeE6aD40a947A162DEAb5aFD0A1e12BE6FF871"
-        handler: ./src/EventHandlers.ts
-        events:
-          - event:
-              event AnswerUpdated(int256 indexed current, uint256 indexed roundId,
-              uint256 updatedAt)
-            requiredEntities:
-              - name: "feed"
-  - id: 56
-    start_block: 30879439
-    contracts:
-      - name: BscFeeds
-        address:
-          - "0xD2528B74ca91Bb07B9bd9685ce533367C6fa657C"
-          - "0x6c9C9757F0478bC38Bf73ABdA27ac42864De0645"
-          - "0x2f92dc0711AdA3dc255e2197e7c15C8aDC6b6537"
-          - "0xE0A34B8FC5e80C877fd568bd22b49E1BCa977B6F"
-          - "0x6a6eb03007131EAe9D02f66289a82d784c4EeA50"
-        handler: ./src/EventHandlers.ts
-        events:
-          - event:
-              event AnswerUpdated(int256 indexed current, uint256 indexed roundId,
-              uint256 updatedAt)
-            requiredEntities:
-              - name: "feed"
-  - id: 10
-    start_block: 108259548
-    contracts:
-      - name: OpFeeds
-        address:
-          - "0xAA75acE4575AbBE1D237D991a7461f497a56a8F0"
-        handler: ./src/EventHandlers.ts
-        events:
-          - event:
-              event AnswerUpdated(int256 indexed current, uint256 indexed roundId,
-              uint256 updatedAt)
-            requiredEntities:
-              - name: "feed"
-  - id: 137
-    start_block: 46342962
+ - id: 137
+    start_block: 48241718
     contracts:
       - name: PolygonFeeds
         address:
@@ -68,19 +25,6 @@ networks:
           - "0x704179beb09282eaef98ca8aaa443c1e273ebbc2"
           - "0x45ede0ea5cbbe380c663c7c3015cc7c986669fec"
           - "0x08f8d217e6f07ae423a2ad2ffb226ffcb577708d"
-        handler: ./src/EventHandlers.ts
-        events:
-          - event:
-              event AnswerUpdated(int256 indexed current, uint256 indexed roundId,
-              uint256 updatedAt)
-            requiredEntities:
-              - name: "feed"
-  - id: 43114
-    start_block: 33959050
-    contracts:
-      - name: AvalancheFeeds
-        address:
-          - "0x95edda00bce60f99fb0be38fe500ebd879ab651a"
         handler: ./src/EventHandlers.ts
         events:
           - event:
