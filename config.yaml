@@ -61,7 +61,7 @@ networks:
               event AnswerUpdated(int256 indexed current, uint256 indexed roundId,
               uint256 updatedAt)
             requiredEntities:
-              - name: "feed"
+              - name: "Feed"
   - id: 56
     start_block: 7329479
     contracts:
@@ -173,7 +173,7 @@ networks:
               event AnswerUpdated(int256 indexed current, uint256 indexed roundId,
               uint256 updatedAt)
             requiredEntities:
-              - name: "feed"
+              - name: "Feed"
   # - id: 10
   #   start_block: 2014079
   #   contracts:
@@ -218,4 +218,4 @@ networks:
   #             event AnswerUpdated(int256 indexed current, uint256 indexed roundId,
   #             uint256 updatedAt)
   #           requiredEntities:
-  #             - name: "feed"
+  #             - name: "Feed"
