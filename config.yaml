@@ -2,11 +2,20 @@ version: 0.0.0
 name: chainlinkFeeds
 description: Chainlink feeds
 repository: https://github.com/Float-Capital/chainlink-feeds
+contracts:
+  - name: ChainlinkFeeds
+    handler: ./src/EventHandlers.ts
+    events:
+      - event:
+          event AnswerUpdated(int256 indexed current, uint256 indexed roundId,
+          uint256 updatedAt)
+        requiredEntities:
+          - name: "Feed"
 networks:
   - id: 42161
     start_block: 100000
     contracts:
-      - name: ArbFeeds
+      - name: ChainlinkFeeds
         address:
           - "0x4258e5D50d737CBBEA347f0115Ad166e234902D7"
           - "0x52716c109696C0229E18fDeadFf6f54B3b73784F"
@@ -55,17 +64,10 @@ networks:
           - "0xF6328F007A2FDc547875e24A3BC7e0603fd01727"
           - "0xCb35fE6E53e71b30301Ec4a3948Da4Ad3c65ACe4"
           - "0x0Ae17556F9698fC47C365A746AB9CddCB17F3809"
-        handler: ./src/EventHandlers.ts
-        events:
-          - event:
-              event AnswerUpdated(int256 indexed current, uint256 indexed roundId,
-              uint256 updatedAt)
-            requiredEntities:
-              - name: "feed"
   - id: 56
     start_block: 7329479
     contracts:
-      - name: BscFeeds
+      - name: ChainlinkFeeds
         address:
           - "0x5C8c6c45dcF57aEae4D7Ba4F613B6FC38EF7d18B"
           - "0x577971aa5f4cF0a7f905dB42d612072CfF65077d"
@@ -167,17 +169,10 @@ networks:
           - "0x7457f14cE4773EBEb1352D2774Ec384a54c2F665"
           - "0x586E5572217D68643E1de6a0d40Cb37B0961A11a"
           - "0x87a69a2988b33ea745008A47486890232630AABf"
-        handler: ./src/EventHandlers.ts
-        events:
-          - event:
-              event AnswerUpdated(int256 indexed current, uint256 indexed roundId,
-              uint256 updatedAt)
-            requiredEntities:
-              - name: "feed"
   # - id: 10
   #   start_block: 2014079
   #   contracts:
-  #     - name: OpFeeds
+  #     - name: ChainlinkFeeds
   #       address:
   #         - "0x6AA7cC6feA036Bd57f36E2b82878c15012c48771"
   #         - "0x615209a932768861908161cCCEfcCac9b582ACe8"
@@ -212,10 +207,3 @@ networks:
   #         - "0x02f5E9e9dcc66ba6392f6904D5Fcf8625d9B19C9"
   #         - "0xB6b7B9b2362F87F204f1CCadDD8832D3a0557dce"
   #         - "0x44f690526B76D91072fb0427B0A24b882E612455"
-  #       handler: ./src/EventHandlers.ts
-  #       events:
-  #         - event:
-  #             event AnswerUpdated(int256 indexed current, uint256 indexed roundId,
-  #             uint256 updatedAt)
-  #           requiredEntities:
-  #             - name: "feed"
